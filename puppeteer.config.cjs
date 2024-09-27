@@ -9,11 +9,11 @@ module.exports = {
 		skipDownload: false,
 	},
 	'chrome-headless-shell': {
-		// version: 'latest',
+		// Version: 'latest',
 		skipDownload: false,
 	},
 	firefox: {
-		// version: 'latest',
+		// Version: 'latest',
 		skipDownload: false,
 	},
 };
