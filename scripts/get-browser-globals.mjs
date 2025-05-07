@@ -138,7 +138,7 @@ async function navigateToSecureContext(page, serverOptions) {
 
 	const url = `http://${hostname}:${port}`;
 	await page.goto(url);
-	const isSecureContext = await page.evaluate(() => window.isSecureContext);
+	const isSecureContext = await page.evaluate(() => globalThis.isSecureContext);
 
 	const close = () => new Promise(resolve => {
 		server.close(resolve);
@@ -226,8 +226,8 @@ async function runInWebWorker(function_) {
 				'/worker.js': {
 					contentType: 'application/javascript',
 					content: '',
-				}
-			}
+				},
+			},
 		});
 		assert.ok(
 			server.isSecureContext,
